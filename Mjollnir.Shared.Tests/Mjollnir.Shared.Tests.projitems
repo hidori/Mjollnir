@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>ccde5228-2192-4f60-8d0d-0e9ae69ea070</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Mjollnir.Shared.Tests</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ActivaterTests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\Generic\ComparerTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\Generic\EqualityComparerTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\Generic\Extensions\EnumerableExtensionsTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ComparableExtensionsTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\ServiceProviderExtensionsTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IO\Extensions\ByteArrayExtensionsTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IO\Extensions\TextReaderExtensionsTest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ThrowTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)packages.config" />
+  </ItemGroup>
+</Project>

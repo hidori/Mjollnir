@@ -89,3 +89,11 @@ A collection of reusable code and components.
 ###<a name="Mjollnir.IO.Extensions.TextReaderExtensions_Class">Mjollnir.IO.Extensions.TextReaderExtensions Namespace</a>
 
 * ReadLines Method
+
+##<a name="Mjollnir.Text_Namespace">Mjollnir.Text Namespace</a>
+
+* [StringFactory Class](#)
+
+###<a name="Mjollnir.Text.StringFactory_Class">Mjollnir.IO.Extensions.TextReaderExtensions Namespace</a>
+
+* Create Method

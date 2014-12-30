@@ -17,6 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\ServiceProviderExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IO\Extensions\ByteArrayExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IO\Extensions\TextReaderExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Text\StringFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Throw.cs" />
   </ItemGroup>
 </Project>

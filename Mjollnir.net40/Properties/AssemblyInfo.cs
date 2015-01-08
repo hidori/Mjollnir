@@ -5,9 +5,9 @@
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("NTDEV.jp")]
 [assembly: AssemblyProduct("Mjollnir")]
-[assembly: AssemblyCopyright("Copyright (c) 2008-2014 Hiroaki SHIBUKI")]
+[assembly: AssemblyCopyright("Copyright (c) 2008-2015 Hiroaki SHIBUKI")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: AssemblyVersion("5.0.1")]
-[assembly: AssemblyFileVersion("5.0.1")]
+[assembly: AssemblyVersion("5.0.2")]
+[assembly: AssemblyFileVersion("5.0.2")]

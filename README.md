@@ -17,11 +17,16 @@ A collection of reusable code and components.
 
 * [Activator Class](#Mjollnir.Activator_Class)
 * [Throw Class](#Mjollnir.Throw_Class)
+* [StringFactory Class](#Mjollnir.Text.StringFactory_Class)
 * [Throw&lt;T&gt; Class](#Mjollnir.ThrowOfT_Class)
 
 ###<a name="Mjollnir.Activator_Class">Activator Class</a>
 
 * CreateInstance&lt;T&gt; Method
+
+###<a name="Mjollnir.Text.StringFactory_Class">Mjollnir.Text.StringFactory Class</a>
+
+* Create Method
 
 ###<a name="Mjollnir.Throw_Class">Throw Class</a>
 
@@ -89,11 +94,3 @@ A collection of reusable code and components.
 ###<a name="Mjollnir.IO.Extensions.TextReaderExtensions_Class">Mjollnir.IO.Extensions.TextReaderExtensions Class</a>
 
 * ReadLines Method
-
-##<a name="Mjollnir.Text_Namespace">Mjollnir.Text Namespace</a>
-
-* [StringFactory Class](#Mjollnir.Text.StringFactory_Class)
-
-###<a name="Mjollnir.Text.StringFactory_Class">Mjollnir.Text.StringFactory Class</a>
-
-* Create Method

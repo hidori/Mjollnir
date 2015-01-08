@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace Mjollnir.Shared.Text.Test
+namespace Mjollnir.Test
 {
     [TestClass]
     public class StringFactoryTest

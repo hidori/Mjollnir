@@ -29,7 +29,7 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
-namespace Mjollnir.Shared.Text
+namespace Mjollnir
 {
     using System.Text;
 

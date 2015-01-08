@@ -79,8 +79,8 @@ A collection of reusable code and components.
 
 ##<a name="Mjollnir.IO.Extensions_Namespace">Mjollnir.IO.Extensions Namespace</a>
 
-* [ByteArrayExtensions Class](#)
-* [TextReaderExtensions Class](#)
+* [ByteArrayExtensions Class](#Mjollnir.IO.Extensions.ByteArrayExtensions_Class)
+* [TextReaderExtensions Class](#Mjollnir.IO.Extensions.TextReaderExtensions_Class)
 
 ###<a name="Mjollnir.IO.Extensions.ByteArrayExtensions_Class">Mjollnir.IO.Extensions.ByteArrayExtensions Class</a>
 
@@ -92,7 +92,7 @@ A collection of reusable code and components.
 
 ##<a name="Mjollnir.Text_Namespace">Mjollnir.Text Namespace</a>
 
-* [StringFactory Class](#)
+* [StringFactory Class](#Mjollnir.Text.StringFactory_Class)
 
 ###<a name="Mjollnir.Text.StringFactory_Class">Mjollnir.Text.StringFactory Class</a>
 

@@ -1,5 +1,5 @@
 ﻿#region LICENSE
-// Copyright (c) 2008-2014, Hiroaki SHIBUKI
+// Copyright (c) 2008-2015, Hiroaki SHIBUKI
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without

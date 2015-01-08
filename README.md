@@ -82,11 +82,11 @@ A collection of reusable code and components.
 * [ByteArrayExtensions Class](#)
 * [TextReaderExtensions Class](#)
 
-###<a name="Mjollnir.IO.Extensions.ByteArrayExtensions_Class">Mjollnir.IO.Extensions.ByteArrayExtensions Namespace</a>
+###<a name="Mjollnir.IO.Extensions.ByteArrayExtensions_Class">Mjollnir.IO.Extensions.ByteArrayExtensions Class</a>
 
 * AsStream Method
 
-###<a name="Mjollnir.IO.Extensions.TextReaderExtensions_Class">Mjollnir.IO.Extensions.TextReaderExtensions Namespace</a>
+###<a name="Mjollnir.IO.Extensions.TextReaderExtensions_Class">Mjollnir.IO.Extensions.TextReaderExtensions Class</a>
 
 * ReadLines Method
 
@@ -94,6 +94,6 @@ A collection of reusable code and components.
 
 * [StringFactory Class](#)
 
-###<a name="Mjollnir.Text.StringFactory_Class">Mjollnir.IO.Extensions.TextReaderExtensions Namespace</a>
+###<a name="Mjollnir.Text.StringFactory_Class">Mjollnir.Text.StringFactory Class</a>
 
 * Create Method

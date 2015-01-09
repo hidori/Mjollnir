@@ -6,7 +6,7 @@
     <SharedGUID>ccde5228-2192-4f60-8d0d-0e9ae69ea070</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>Mjollnir.Shared.Tests</Import_RootNamespace>
+    <Import_RootNamespace>Mjollnir.Tests</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ActivaterTests.cs" />

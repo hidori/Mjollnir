@@ -148,7 +148,65 @@ namespace Mjollnir
 					.Is(_ => _.ParamName == paramName && _.ActualValue.Equals(actualValue) && _.Message.Contains(userMessage));
 			}
 		}
-	}
+
+        [TestMethod]
+        public void IfInvalidOperationTest()
+        {
+            var userMessage = "userMessage";
+            var innerException = new ApplicationException();
+
+            {
+                AssertEx.DoesNotThrow(() => Throw.IfInvalidOperation(false));
+                AssertEx.Throws<InvalidOperationException>(() => Throw.IfInvalidOperation(true));
+            }
+
+            {
+                AssertEx.Throws<ArgumentNullException>(() => Throw.IfInvalidOperation(false, null));
+                AssertEx.DoesNotThrow(() => Throw.IfInvalidOperation(false, userMessage));
+                AssertEx.Throws<ArgumentNullException>(() => Throw.IfInvalidOperation(true, null));
+                AssertEx.Throws<InvalidOperationException>(() => Throw.IfInvalidOperation(true, userMessage));
+            }
+
+            {
+                AssertEx.Throws<ArgumentNullException>(() => Throw.IfInvalidOperation(false, null, null));
+                AssertEx.Throws<ArgumentNullException>(() => Throw.IfInvalidOperation(false, null, innerException));
+                AssertEx.Throws<ArgumentNullException>(() => Throw.IfInvalidOperation(false, userMessage, null));
+                AssertEx.DoesNotThrow(() => Throw.IfInvalidOperation(false, userMessage, innerException));
+                AssertEx.Throws<ArgumentNullException>(() => Throw.IfInvalidOperation(true, null, innerException));
+                AssertEx.Throws<ArgumentNullException>(() => Throw.IfInvalidOperation(true, userMessage, null));
+                AssertEx.Throws<InvalidOperationException>(() => Throw.IfInvalidOperation(true, userMessage, innerException));
+            }
+        }
+
+        [TestMethod]
+        public void IfNotSupportedTest()
+        {
+            var userMessage = "userMessage";
+            var innerException = new ApplicationException();
+
+            {
+                AssertEx.DoesNotThrow(() => Throw.IfNotSupported(false));
+                AssertEx.Throws<NotSupportedException>(() => Throw.IfNotSupported(true));
+            }
+
+            {
+                AssertEx.Throws<ArgumentNullException>(() => Throw.IfNotSupported(false, null));
+                AssertEx.DoesNotThrow(() => Throw.IfNotSupported(false, userMessage));
+                AssertEx.Throws<ArgumentNullException>(() => Throw.IfNotSupported(true, null));
+                AssertEx.Throws<NotSupportedException>(() => Throw.IfNotSupported(true, userMessage));
+            }
+
+            {
+                AssertEx.Throws<ArgumentNullException>(() => Throw.IfNotSupported(false, null, null));
+                AssertEx.Throws<ArgumentNullException>(() => Throw.IfNotSupported(false, null, innerException));
+                AssertEx.Throws<ArgumentNullException>(() => Throw.IfNotSupported(false, userMessage, null));
+                AssertEx.DoesNotThrow(() => Throw.IfNotSupported(false, userMessage, innerException));
+                AssertEx.Throws<ArgumentNullException>(() => Throw.IfNotSupported(true, null, innerException));
+                AssertEx.Throws<ArgumentNullException>(() => Throw.IfNotSupported(true, userMessage, null));
+                AssertEx.Throws<NotSupportedException>(() => Throw.IfNotSupported(true, userMessage, innerException));
+            }
+        }
+    }
 
 	[TestClass]
 	public class ThrowTExceptionTest

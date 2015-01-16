@@ -121,6 +121,54 @@ namespace Mjollnir
         }
 
         #endregion
+
+        #region IfInvalidOperation
+
+        public static void IfInvalidOperation(bool condition)
+        {
+            Throw.If(condition, () => new InvalidOperationException());
+        }
+
+        public static void IfInvalidOperation(bool condition, string userMessage)
+        {
+            Throw.IfNull(userMessage, "userMessage");
+
+            Throw.If(condition, () => new InvalidOperationException(userMessage));
+        }
+
+        public static void IfInvalidOperation(bool condition, string userMessage, Exception innerException)
+        {
+            Throw.IfNull(userMessage, "userMessage");
+            Throw.IfNull(innerException, "innerException");
+
+            Throw.If(condition, () => new InvalidOperationException(userMessage, innerException));
+        }
+
+        #endregion
+
+        #region IfNotSupported
+
+        public static void IfNotSupported(bool condition)
+        {
+            Throw.If(condition, () => new NotSupportedException());
+        }
+
+        public static void IfNotSupported(bool condition, string userMessage)
+        {
+            Throw.IfNull(userMessage, "userMessage");
+
+            Throw.If(condition, () => new NotSupportedException(userMessage));
+        }
+
+        public static void IfNotSupported(bool condition, string userMessage, Exception innerException)
+        {
+            Throw.IfNull(userMessage, "userMessage");
+            Throw.IfNull(innerException, "innerException");
+
+            Throw.If(condition, () => new NotSupportedException(userMessage, innerException));
+        }
+
+        #endregion
     }
 
     public static class Throw<TException> where TException : Exception

@@ -1,7 +1,7 @@
 @echo off
 set ECHO=
 
-set TARGET=Mjollnir
+set TARGET=%*
 set TARGET_DIR=%~dp0
 
 set MSBUILD=%SystemRoot%\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe

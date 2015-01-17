@@ -12,6 +12,7 @@ A collection of reusable code and components.
 * [Mjollnir.Collection.Generic.Extensions Namespace](#Mjollnir.Collection.Generic.Extensions_Namespace)
 * [Mjollnir.Extensions Namespace](#Mjollnir.Extensions_Namespace)
 * [Mjollnir.IO.Extensions Namespace](#Mjollnir.IO.Extensions_Namespace)
+* [Mjollnir.Xml.Extensions Namespace](#Mjollnir.Xml.Extensions_Namespace)
 
 ##<a name="Mjollnir_Namespace">Mjollnir Namespace</a>
 
@@ -40,17 +41,16 @@ A collection of reusable code and components.
 
 ##<a name="Mjollnir.Collection.Generic_Namespace">Mjollnir.Collection.Generic Namespace</a>
 
-* [Comparer&lt;T&gt; Class](#Mjollnir.Collection.Generic.CompareOfT_Class)
-* [EqualityComparer&lt;T&gt; Class](#Mjollnir.Collection.Generic.EqualityComparerOfT_Class)
+* [ComparerFactory Class](#Mjollnir.Collection.Generic.CompareFactory_Class)
+* [EqualityComparerFactory Class](#Mjollnir.Collection.Generic.EqualityComparerFactory_Class)
 
-###<a name="Mjollnir.Collection.Generic.ComparerOfT_Class">Comparer&lt;T&gt; Class</a>
+###<a name="Mjollnir.Collection.Generic.ComparerFactory_Class">ComparerFactory Class</a>
 
-* Compare Method
+* Create Method
 
-###<a name="Mjollnir.Collection.Generic.EqualityComparerOfT_Class">EqualityComparer&lt;T&gt; Class</a>
+###<a name="Mjollnir.Collection.Generic.EqualityComparerFactory_Class">EqualityComparerFactory Class</a>
 
-* Equals Method
-* GetHashCode Method
+* Create Method
 
 ##<a name="Mjollnir.Collection.Generic.Extensions_Namespace">Mjollnir.Collection.Generic.Extensions Namespace</a>
 
@@ -94,3 +94,17 @@ A collection of reusable code and components.
 ###<a name="Mjollnir.IO.Extensions.TextReaderExtensions_Class">Mjollnir.IO.Extensions.TextReaderExtensions Class</a>
 
 * ReadLines Method
+
+##<a name="Mjollnir.Xml.Extensions_Namespace">Mjollnir.Xml.Extensions Namespace</a>
+
+* [XmlElementExtensions Class](#Mjollnir.Xml.Extensions.XmlElementExtensions )
+* [XmlNodeExtensions Class](#Mjollnir.Xml.Extensions.XmlNodeExtensions_Class)
+
+###<a name="Mjollnir.Xml.Extensions.XmlElementExtensions">Mjollnir.Xml.Extensions.XmlElementExtensions Class</a>
+
+* Attributes Method
+* Elements Method
+
+###<a name="Mjollnir.Xml.Extensions.XmlNodeExtensions_Class">Mjollnir.Xml.Extensions.XmlNodeExtensions Class</a>
+
+* Nodes Method

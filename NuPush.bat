@@ -1,13 +1,15 @@
 @echo off
-if not "%VS120COMNTOOLS%" == "" goto SKIP_VSVARS
-	call "%ProgramFiles(x86)%\Microsoft Visual Studio 12.0\Common7\Tools\VsVars32.bat"
-:SKIP_VSVARS
+set ECHO=
 
-set TARGET=Mjollnir
+set TARGET=%*
 set TARGET_DIR=%~dp0
 
-for %%I in ("%TARGET_DIR%*.nupkg") do (
-	set TARGET_PACKAGE=%%I
-)
+set NUGET=%TARGET_DIR%.nuget\NuGet.exe
 
-nuget push "%TARGET_PACKAGE%"
+for %%I in (%TARGET%) do (
+	for %%J in ("%TARGET_DIR%%%I\*.nupkg") do (
+		set TARGET_PACKAGE=%%J
+	)
+
+	%ECHO% "%NUGET%" push "%TARGET_PACKAGE%"
+)

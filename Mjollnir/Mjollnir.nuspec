@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Mjollnir</id>
+    <version>5.0.6</version>
+    <authors>hidori</authors>
+    <owners>hidori</owners>
+    <licenseUrl>https://raw.githubusercontent.com/hidori/Mjollnir/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/hidori/Mjollnir</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A collection of reusable code and components.</description>
+    <copyright>Copyright (c) 2008-2015 Hiroaki SHIBUKI a.k.a. hidori</copyright>
+    <tags>BCL Mjollnir</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\*.dll" target="lib\net45" />
+    <file src="bin\Release\*.pdb" target="lib\net45" />
+  </files>
+</package>

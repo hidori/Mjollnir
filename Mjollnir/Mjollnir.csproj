@@ -56,7 +56,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Mjollnir.nuspec" />
-    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

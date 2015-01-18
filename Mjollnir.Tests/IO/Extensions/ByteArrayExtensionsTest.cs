@@ -1,6 +1,5 @@
 ﻿using System;
-using System.IO;
-using System.Linq;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Mjollnir.IO.Extensions.Tests
@@ -11,35 +10,59 @@ namespace Mjollnir.IO.Extensions.Tests
         [TestMethod]
         public void AsStreamTest()
         {
-            var buffer = new byte[] { 1, 2, 3, 4 };
+            var bytes = new[] { (byte)1, (byte)3, (byte)5 };
 
             {
                 AssertEx.Throws<ArgumentNullException>(() => ByteArrayExtensions.AsStream(null));
 
-                using(var stream = buffer.AsStream())
-                using(var memoryStream = new MemoryStream())
+                using (var stream = bytes.AsStream())
                 {
-                    stream.CopyTo(memoryStream);
+                    stream.ReadByte().Is(1);
+                    stream.ReadByte().Is(3);
+                    stream.ReadByte().Is(5);
 
-                    memoryStream.ToArray().Is(buffer);
+                    stream.Read(new byte[1], 0, 1).Is(0);
                 }
             }
 
             {
-                AssertEx.Throws<ArgumentNullException>(() => ByteArrayExtensions.AsStream(null, 0, 0));
-                AssertEx.Throws<ArgumentOutOfRangeException>(() => buffer.AsStream(0, -1));
-                AssertEx.Throws<ArgumentOutOfRangeException>(() => buffer.AsStream(-1, 0));
+                AssertEx.Throws<ArgumentNullException>(() => ByteArrayExtensions.AsStream(null, 1, 1));
 
-                using (var stream = buffer.AsStream(1, 2))
-                using (var memoryStream = new MemoryStream())
+                using (var stream = bytes.ToStream(1, 1))
                 {
-                    stream.CopyTo(memoryStream);
+                    stream.ReadByte().Is(3);
 
-                    var bytes = memoryStream.ToArray();
+                    stream.Read(new byte[1], 0, 1).Is(0);
+                }
+            }
+        }
 
-                    bytes.Count().Is(2);
-                    bytes[0].Is((byte)2);
-                    bytes[1].Is((byte)3);
+        [TestMethod]
+        public void ToStreamTest()
+        {
+            var bytes = (IEnumerable<byte>)new[] { (byte)1, (byte)3, (byte)5 };
+
+            {
+                AssertEx.Throws<ArgumentNullException>(() => ByteArrayExtensions.ToStream(null));
+
+                using (var stream = bytes.ToStream())
+                {
+                    stream.ReadByte().Is(1);
+                    stream.ReadByte().Is(3);
+                    stream.ReadByte().Is(5);
+
+                    stream.Read(new byte[1], 0, 1).Is(0);
+                }
+            }
+
+            {
+                AssertEx.Throws<ArgumentNullException>(() => ByteArrayExtensions.ToStream(null, 1, 1));
+
+                using (var stream = bytes.ToStream(1, 1))
+                {
+                    stream.ReadByte().Is(3);
+
+                    stream.Read(new byte[1], 0, 1).Is(0);
                 }
             }
         }

@@ -30,7 +30,9 @@
 
 namespace Mjollnir.IO.Extensions
 {
+    using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
 
     public static class ByteArrayExtensions
     {
@@ -48,7 +50,21 @@ namespace Mjollnir.IO.Extensions
         {
             Throw.IfNull(source, "source");
 
-            return source.AsStream(0, source.Length);
+            return source.AsStream(0, source.Count());
+        }
+
+        public static Stream ToStream(this IEnumerable<byte> source, int index, int count)
+        {
+            Throw.IfNull(source, "source");
+
+            return source.Skip(index).Take(count).ToArray().AsStream();
+        }
+
+        public static Stream ToStream(this IEnumerable<byte> source)
+        {
+            Throw.IfNull(source, "source");
+
+            return source.ToArray().AsStream();
         }
     }
 }

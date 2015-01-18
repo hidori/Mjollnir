@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>Mjollnir</id>
-    <version>5.0.9</version>
+    <version>$version$</version>
     <authors>hidori</authors>
     <owners>hidori</owners>
     <licenseUrl>https://raw.githubusercontent.com/hidori/Mjollnir/master/LICENSE</licenseUrl>
@@ -13,7 +13,7 @@
     <tags>BCL Mjollnir</tags>
   </metadata>
   <files>
-    <file src="bin\Release\*.dll" target="lib\net45" />
-    <file src="bin\Release\*.pdb" target="lib\net45" />
+    <file src="bin\Release\Mjollnir.dll" target="lib\net45" />
+    <file src="bin\Release\Mjollnir.pdb" target="lib\net45" />
   </files>
 </package>

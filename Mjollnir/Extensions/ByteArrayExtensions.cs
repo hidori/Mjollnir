@@ -28,7 +28,7 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
-namespace Mjollnir.IO.Extensions
+namespace Mjollnir.Extensions
 {
     using System.Collections.Generic;
     using System.IO;

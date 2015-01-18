@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Mjollnir.IO.Extensions.Tests
+namespace Mjollnir.Extensions.Tests
 {
     [TestClass]
     public class ByteArrayExtensionsTest

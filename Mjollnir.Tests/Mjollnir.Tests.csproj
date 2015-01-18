@@ -64,7 +64,7 @@
     <Compile Include="Collections\Generic\Extensions\EnumerableExtensionsTest.cs" />
     <Compile Include="Extensions\ComparableExtensionsTest.cs" />
     <Compile Include="Extensions\ServiceProviderExtensionsTest.cs" />
-    <Compile Include="IO\Extensions\ByteArrayExtensionsTest.cs" />
+    <Compile Include="ByteArrayExtensionsTest.cs" />
     <Compile Include="IO\Extensions\TextReaderExtensionsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringFactoryTest.cs" />

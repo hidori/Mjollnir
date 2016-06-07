@@ -97,7 +97,7 @@ namespace Mjollnir
         [Obsolete]
         public static void IfOutOfRange(bool condition, string paramName)
         {
-            Throw.IfNull(paramName, nameof(paramName));
+            Throw.ArgumentNullException.IfNull(paramName, nameof(paramName));
 
             Throw.If(condition, () => new System.ArgumentOutOfRangeException(paramName));
         }
@@ -105,8 +105,8 @@ namespace Mjollnir
         [Obsolete]
         public static void IfOutOfRange(bool condition, string userMessage, Exception innerException)
         {
-            Throw.IfNull(userMessage, nameof(userMessage));
-            Throw.IfNull(innerException, nameof(innerException));
+            Throw.ArgumentNullException.IfNull(userMessage, nameof(userMessage));
+            Throw.ArgumentNullException.IfNull(innerException, nameof(innerException));
 
             Throw.If(condition, () => new System.ArgumentOutOfRangeException(userMessage, innerException));
         }
@@ -114,8 +114,8 @@ namespace Mjollnir
         [Obsolete]
         public static void IfOutOfRange(bool condition, string paramName, string userMessage)
         {
-            Throw.IfNull(paramName, nameof(paramName));
-            Throw.IfNull(userMessage, nameof(userMessage));
+            Throw.ArgumentNullException.IfNull(paramName, nameof(paramName));
+            Throw.ArgumentNullException.IfNull(userMessage, nameof(userMessage));
 
             Throw.If(condition, () => new System.ArgumentOutOfRangeException(paramName, userMessage));
         }
@@ -123,9 +123,9 @@ namespace Mjollnir
         [Obsolete]
         public static void IfOutOfRange(bool condition, string paramName, object actualValue, string userMessage)
         {
-            Throw.IfNull(paramName, nameof(paramName));
+            Throw.ArgumentNullException.IfNull(paramName, nameof(paramName));
             // actuaValue can be null.
-            Throw.IfNull(userMessage, nameof(userMessage));
+            Throw.ArgumentNullException.IfNull(userMessage, nameof(userMessage));
 
             Throw.If(condition, () => new System.ArgumentOutOfRangeException(paramName, actualValue, userMessage));
         }
@@ -143,7 +143,7 @@ namespace Mjollnir
         [Obsolete]
         public static void IfInvalidOperation(bool condition, string userMessage)
         {
-            Throw.IfNull(userMessage, nameof(userMessage));
+            Throw.ArgumentNullException.IfNull(userMessage, nameof(userMessage));
 
             Throw.If(condition, () => new System.InvalidOperationException(userMessage));
         }
@@ -151,8 +151,8 @@ namespace Mjollnir
         [Obsolete]
         public static void IfInvalidOperation(bool condition, string userMessage, Exception innerException)
         {
-            Throw.IfNull(userMessage, nameof(userMessage));
-            Throw.IfNull(innerException, nameof(innerException));
+            Throw.ArgumentNullException.IfNull(userMessage, nameof(userMessage));
+            Throw.ArgumentNullException.IfNull(innerException, nameof(innerException));
 
             Throw.If(condition, () => new System.InvalidOperationException(userMessage, innerException));
         }
@@ -170,7 +170,7 @@ namespace Mjollnir
         [Obsolete]
         public static void IfNotSupported(bool condition, string userMessage)
         {
-            Throw.IfNull(userMessage, nameof(userMessage));
+            Throw.ArgumentNullException.IfNull(userMessage, nameof(userMessage));
 
             Throw.If(condition, () => new System.NotSupportedException(userMessage));
         }
@@ -178,8 +178,8 @@ namespace Mjollnir
         [Obsolete]
         public static void IfNotSupported(bool condition, string userMessage, Exception innerException)
         {
-            Throw.IfNull(userMessage, nameof(userMessage));
-            Throw.IfNull(innerException, nameof(innerException));
+            Throw.ArgumentNullException.IfNull(userMessage, nameof(userMessage));
+            Throw.ArgumentNullException.IfNull(innerException, nameof(innerException));
 
             Throw.If(condition, () => new System.NotSupportedException(userMessage, innerException));
         }

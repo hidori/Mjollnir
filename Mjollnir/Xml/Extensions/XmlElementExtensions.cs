@@ -40,38 +40,38 @@ namespace Mjollnir.Xml.Extensions
     {
         public static IEnumerable<XmlAttribute> Attributes(this XmlElement source)
         {
-            Throw.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
 
             return source.Attributes.OfType<XmlAttribute>();
         }
 
         public static IEnumerable<XmlAttribute> Attributes(this XmlElement source, Func<XmlAttribute, bool> predicate)
         {
-            Throw.IfNull(source, nameof(source));
-            Throw.IfNull(predicate, nameof(predicate));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(predicate, nameof(predicate));
 
             return source.Attributes().Where(predicate);
         }
 
         public static IEnumerable<XmlElement> Elements(this XmlElement source)
         {
-            Throw.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
 
             return source.ChildNodes.OfType<XmlElement>();
         }
 
         public static IEnumerable<XmlElement> Elements(this XmlElement source, Func<XmlElement, bool> predicate)
         {
-            Throw.IfNull(source, nameof(source));
-            Throw.IfNull(predicate, nameof(predicate));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(predicate, nameof(predicate));
 
             return source.Elements().Where(predicate);
         }
 
         public static void Walk(this XmlElement element, Action<XmlElement> action)
         {
-            Throw.IfNull(element, nameof(element));
-            Throw.IfNull(action, nameof(action));
+            Throw.ArgumentNullException.IfNull(element, nameof(element));
+            Throw.ArgumentNullException.IfNull(action, nameof(action));
 
             action(element);
 

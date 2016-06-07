@@ -7,7 +7,7 @@ namespace Mjollnir
     {
         public static byte[] Create(Action<Stream> action)
         {
-            Throw.IfNull(action, nameof(action));
+            Throw.ArgumentNullException.IfNull(action, nameof(action));
 
             using (var stream = new MemoryStream())
             {

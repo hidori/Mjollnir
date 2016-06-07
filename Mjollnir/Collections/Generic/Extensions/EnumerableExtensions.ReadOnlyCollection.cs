@@ -38,14 +38,14 @@ namespace Mjollnir.Collections.Generic.Extensions
     {
         public static ReadOnlyCollection<T> AsReadOnlyCollection<T>(this IList<T> source)
         {
-            Throw.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
 
             return new ReadOnlyCollection<T>(source);
         }
 
         public static ReadOnlyCollection<T> ToReadOnlyCollection<T>(this IEnumerable<T> source)
         {
-            Throw.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
 
             return source.ToArray().AsReadOnlyCollection();
         }

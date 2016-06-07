@@ -37,7 +37,7 @@ namespace Mjollnir
     {
         public static string Create(Action<StringBuilder> appender)
         {
-            Throw.IfNull(appender, nameof(appender));
+            Throw.ArgumentNullException.IfNull(appender, nameof(appender));
 
             var sb = new StringBuilder();
 

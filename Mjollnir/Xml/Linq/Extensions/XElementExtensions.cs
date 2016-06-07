@@ -7,8 +7,8 @@ namespace Mjollnir.Xml.Linq.Extensions
     {
         public static void Walk(this XElement element, Action<XElement> action)
         {
-            Throw.IfNull(element, nameof(element));
-            Throw.IfNull(action, nameof(action));
+            Throw.ArgumentNullException.IfNull(element, nameof(element));
+            Throw.ArgumentNullException.IfNull(action, nameof(action));
 
             action(element);
 

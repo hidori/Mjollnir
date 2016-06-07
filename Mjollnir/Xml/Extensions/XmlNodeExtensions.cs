@@ -40,15 +40,15 @@ namespace Mjollnir.Xml.Extensions
     {
         public static IEnumerable<XmlNode> Nodes(this XmlNode source)
         {
-            Throw.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
 
             return source.ChildNodes.OfType<XmlNode>();
         }
 
         public static IEnumerable<XmlNode> Nodes(this XmlNode source, Func<XmlNode, bool> predicate)
         {
-            Throw.IfNull(source, nameof(source));
-            Throw.IfNull(predicate, nameof(predicate));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(predicate, nameof(predicate));
 
             return source.Nodes().Where(predicate);
         }

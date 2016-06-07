@@ -39,43 +39,43 @@ namespace Mjollnir.Collections.Generic.Extensions
     {
         public static ReadOnlyDictionary<TKey, TValue> AsReadOnlyDictionary<TKey, TValue>(this IDictionary<TKey, TValue> source)
         {
-            Throw.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
 
             return new ReadOnlyDictionary<TKey, TValue>(source);
         }
 
         public static ReadOnlyDictionary<TKey, T> ToReadOnlyDictionary<TKey, T>(this IEnumerable<T> source, Func<T, TKey> keySelector)
         {
-            Throw.IfNull(source, nameof(source));
-            Throw.IfNull(keySelector, nameof(keySelector));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(keySelector, nameof(keySelector));
 
             return source.ToDictionary(keySelector).AsReadOnlyDictionary();
         }
 
         public static ReadOnlyDictionary<TKey, T> ToReadOnlyDictionary<TKey, T>(this IEnumerable<T> source, Func<T, TKey> keySelector, IEqualityComparer<TKey> keyCcomparer)
         {
-            Throw.IfNull(source, nameof(source));
-            Throw.IfNull(keySelector, nameof(keySelector));
-            Throw.IfNull(keyCcomparer, nameof(keyCcomparer));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(keySelector, nameof(keySelector));
+            Throw.ArgumentNullException.IfNull(keyCcomparer, nameof(keyCcomparer));
 
             return source.ToDictionary(keySelector, keyCcomparer).AsReadOnlyDictionary();
         }
 
         public static ReadOnlyDictionary<TKey, TElement> ToReadOnlyDictionary<T, TKey, TElement>(this IEnumerable<T> source, Func<T, TKey> keySelector, Func<T, TElement> elementSelector)
         {
-            Throw.IfNull(source, nameof(source));
-            Throw.IfNull(keySelector, nameof(keySelector));
-            Throw.IfNull(elementSelector, nameof(elementSelector));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(keySelector, nameof(keySelector));
+            Throw.ArgumentNullException.IfNull(elementSelector, nameof(elementSelector));
 
             return source.ToDictionary(keySelector, elementSelector).AsReadOnlyDictionary();
         }
 
         public static ReadOnlyDictionary<TKey, TElement> ToReadOnlyDictionary<T, TKey, TElement>(this IEnumerable<T> source, Func<T, TKey> keySelector, Func<T, TElement> elementSelector, IEqualityComparer<TKey> keyComparer)
         {
-            Throw.IfNull(source, nameof(source));
-            Throw.IfNull(keySelector, nameof(keySelector));
-            Throw.IfNull(elementSelector, nameof(elementSelector));
-            Throw.IfNull(keyComparer, nameof(keyComparer));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(keySelector, nameof(keySelector));
+            Throw.ArgumentNullException.IfNull(elementSelector, nameof(elementSelector));
+            Throw.ArgumentNullException.IfNull(keyComparer, nameof(keyComparer));
 
             return source.ToDictionary(keySelector, elementSelector, keyComparer).AsReadOnlyDictionary();
         }

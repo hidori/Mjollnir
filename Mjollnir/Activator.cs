@@ -39,7 +39,7 @@ namespace Mjollnir
 
         public static T CreateInstance<T>(params object[] args)
         {
-            Throw.IfNull(args, nameof(args));
+            Throw.ArgumentNullException.IfNull(args, nameof(args));
 
             return (T)System.Activator.CreateInstance(typeof(T), args);
         }

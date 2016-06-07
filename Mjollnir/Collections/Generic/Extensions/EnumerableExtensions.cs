@@ -38,8 +38,8 @@ namespace Mjollnir.Collections.Generic.Extensions
     {
         public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
         {
-            Throw.IfNull(source, nameof(source));
-            Throw.IfNull(action, nameof(action));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(action, nameof(action));
 
             foreach (var item in source)
             {
@@ -49,8 +49,8 @@ namespace Mjollnir.Collections.Generic.Extensions
 
         public static void ForEach<T>(this IEnumerable<T> source, Action<T, int> action)
         {
-            Throw.IfNull(source, nameof(source));
-            Throw.IfNull(action, nameof(action));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(action, nameof(action));
 
             source
                 .Select((v, i) => new { Value = v, Index = i })

@@ -37,7 +37,7 @@ namespace Mjollnir.IO.Extensions
     {
         public static IEnumerable<string> ReadLines(this TextReader reader)
         {
-            Throw.IfNull(reader, nameof(reader));
+            Throw.ArgumentNullException.IfNull(reader, nameof(reader));
 
             for (var line = reader.ReadLine(); line != null; line = reader.ReadLine())
             {

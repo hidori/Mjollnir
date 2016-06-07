@@ -55,6 +55,7 @@
     <Compile Include="Throw.cs" />
     <Compile Include="Xml\Extensions\XmlElementExtensions.cs" />
     <Compile Include="Xml\Extensions\XmlNodeExtensions.cs" />
+    <Compile Include="Xml\Linq\Extensions\XElementExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mjollnir.nuspec" />

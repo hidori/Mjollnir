@@ -67,5 +67,18 @@ namespace Mjollnir.Xml.Extensions
 
             return source.Elements().Where(predicate);
         }
+
+        public static void Walk(this XmlElement element, Action<XmlElement> action)
+        {
+            Throw.IfNull(element, nameof(element));
+            Throw.IfNull(action, nameof(action));
+
+            action(element);
+
+            foreach (var childElement in element.Elements())
+            {
+                childElement.Walk(action);
+            }
+        }
     }
 }

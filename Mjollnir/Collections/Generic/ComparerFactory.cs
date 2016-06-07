@@ -39,7 +39,7 @@ namespace Mjollnir.Collections.Generic
         {
             public Comparer(Func<T, T, int> compare)
             {
-                Throw.IfNull(compare, "compare");
+                Throw.IfNull(compare, nameof(compare));
 
                 this.compare = compare;
             }

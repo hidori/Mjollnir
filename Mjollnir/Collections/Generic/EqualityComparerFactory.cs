@@ -39,8 +39,8 @@ namespace Mjollnir.Collections.Generic
         {
             public EqualityComparer(Func<T, T, bool> equals, Func<T, int> getHashCode)
             {
-                Throw.IfNull(equals, "equals");
-                Throw.IfNull(getHashCode, "getHashCode");
+                Throw.IfNull(equals, nameof(equals));
+                Throw.IfNull(getHashCode, nameof(getHashCode));
 
                 this.equals = equals;
                 this.getHashCode = getHashCode;

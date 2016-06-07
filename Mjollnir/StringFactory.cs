@@ -1,5 +1,4 @@
-﻿using System;
-#region LICENSE
+﻿#region LICENSE
 // Copyright (c) 2008-2016, Hiroaki SHIBUKI
 // All rights reserved.
 //
@@ -31,17 +30,18 @@
 
 namespace Mjollnir
 {
+    using System;
     using System.Text;
 
     public static class StringFactory
     {
-        public static string Create(Action<StringBuilder> modifier)
+        public static string Create(Action<StringBuilder> appender)
         {
-            Throw.IfNull(modifier, "modifier");
+            Throw.IfNull(appender, nameof(appender));
 
             var sb = new StringBuilder();
 
-            modifier(sb);
+            appender(sb);
 
             return sb.ToString();
         }

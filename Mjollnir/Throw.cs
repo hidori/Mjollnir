@@ -38,7 +38,7 @@ namespace Mjollnir
 
         public static void If(bool condition, Func<Exception> factory)
         {
-            if (factory == null) throw new ArgumentNullException("factory");
+            if (factory == null) throw new ArgumentNullException(nameof(factory));
 
             if (condition) throw factory();
         }
@@ -56,7 +56,7 @@ namespace Mjollnir
         public static void IfNull<TParam>(TParam param, string paramName)
             where TParam : class
         {
-            Throw.If(paramName == null, () => new ArgumentNullException("paramName"));
+            Throw.If(paramName == null, () => new ArgumentNullException(nameof(paramName)));
 
             Throw.If(param == null, () => new ArgumentNullException(paramName));
         }
@@ -64,8 +64,8 @@ namespace Mjollnir
         public static void IfNull<TParam>(TParam param, string userMessage, Exception innerException)
             where TParam : class
         {
-            Throw.If(userMessage == null, () => new ArgumentNullException("userMessage"));
-            Throw.If(innerException == null, () => new ArgumentNullException("innerException"));
+            Throw.If(userMessage == null, () => new ArgumentNullException(nameof(userMessage)));
+            Throw.If(innerException == null, () => new ArgumentNullException(nameof(innerException)));
 
             Throw.If(param == null, () => new ArgumentNullException(userMessage, innerException));
         }
@@ -73,8 +73,8 @@ namespace Mjollnir
         public static void IfNull<TParam>(TParam param, string paramName, string userMessage)
             where TParam : class
         {
-            Throw.If(paramName == null, () => new ArgumentNullException("paramName"));
-            Throw.If(userMessage == null, () => new ArgumentNullException("userMessage"));
+            Throw.If(paramName == null, () => new ArgumentNullException(nameof(paramName)));
+            Throw.If(userMessage == null, () => new ArgumentNullException(nameof(userMessage)));
 
             Throw.If(param == null, () => new ArgumentNullException(paramName, userMessage));
         }
@@ -90,32 +90,32 @@ namespace Mjollnir
 
         public static void IfOutOfRange(bool condition, string paramName)
         {
-            Throw.IfNull(paramName, "paramName");
+            Throw.IfNull(paramName, nameof(paramName));
 
             Throw.If(condition, () => new ArgumentOutOfRangeException(paramName));
         }
 
         public static void IfOutOfRange(bool condition, string userMessage, Exception innerException)
         {
-            Throw.IfNull(userMessage, "userMessage");
-            Throw.IfNull(innerException, "innerException");
+            Throw.IfNull(userMessage, nameof(userMessage));
+            Throw.IfNull(innerException, nameof(innerException));
 
             Throw.If(condition, () => new ArgumentOutOfRangeException(userMessage, innerException));
         }
 
         public static void IfOutOfRange(bool condition, string paramName, string userMessage)
         {
-            Throw.IfNull(paramName, "paramName");
-            Throw.IfNull(userMessage, "userMessage");
+            Throw.IfNull(paramName, nameof(paramName));
+            Throw.IfNull(userMessage, nameof(userMessage));
 
             Throw.If(condition, () => new ArgumentOutOfRangeException(paramName, userMessage));
         }
 
         public static void IfOutOfRange(bool condition, string paramName, object actualValue, string userMessage)
         {
-            Throw.IfNull(paramName, "paramName");
+            Throw.IfNull(paramName, nameof(paramName));
             // actuaValue can be null.
-            Throw.IfNull(userMessage, "userMessage");
+            Throw.IfNull(userMessage, nameof(userMessage));
 
             Throw.If(condition, () => new ArgumentOutOfRangeException(paramName, actualValue, userMessage));
         }
@@ -131,15 +131,15 @@ namespace Mjollnir
 
         public static void IfInvalidOperation(bool condition, string userMessage)
         {
-            Throw.IfNull(userMessage, "userMessage");
+            Throw.IfNull(userMessage, nameof(userMessage));
 
             Throw.If(condition, () => new InvalidOperationException(userMessage));
         }
 
         public static void IfInvalidOperation(bool condition, string userMessage, Exception innerException)
         {
-            Throw.IfNull(userMessage, "userMessage");
-            Throw.IfNull(innerException, "innerException");
+            Throw.IfNull(userMessage, nameof(userMessage));
+            Throw.IfNull(innerException, nameof(innerException));
 
             Throw.If(condition, () => new InvalidOperationException(userMessage, innerException));
         }
@@ -155,15 +155,15 @@ namespace Mjollnir
 
         public static void IfNotSupported(bool condition, string userMessage)
         {
-            Throw.IfNull(userMessage, "userMessage");
+            Throw.IfNull(userMessage, nameof(userMessage));
 
             Throw.If(condition, () => new NotSupportedException(userMessage));
         }
 
         public static void IfNotSupported(bool condition, string userMessage, Exception innerException)
         {
-            Throw.IfNull(userMessage, "userMessage");
-            Throw.IfNull(innerException, "innerException");
+            Throw.IfNull(userMessage, nameof(userMessage));
+            Throw.IfNull(innerException, nameof(innerException));
 
             Throw.If(condition, () => new NotSupportedException(userMessage, innerException));
         }
@@ -180,15 +180,15 @@ namespace Mjollnir
 
         public static void If(bool condition, string userMessage)
         {
-            Throw.IfNull(userMessage, "userMessage");
+            Throw.IfNull(userMessage, nameof(userMessage));
 
             Throw.If(condition, () => (TException)System.Activator.CreateInstance(typeof(TException), new object[] { userMessage }));
         }
 
         public static void If(bool condition, string userMessage, Exception innerException)
         {
-            Throw.IfNull(userMessage, "userMessage");
-            Throw.IfNull(innerException, "innerException");
+            Throw.IfNull(userMessage, nameof(userMessage));
+            Throw.IfNull(innerException, nameof(innerException));
 
             Throw.If(condition, () => (TException)System.Activator.CreateInstance(typeof(TException), new object[] { userMessage, innerException }));
         }

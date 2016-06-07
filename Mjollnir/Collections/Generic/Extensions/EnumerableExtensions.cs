@@ -41,8 +41,8 @@ namespace Mjollnir.Collections.Generic.Extensions
 
         public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
         {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(action, "action");
+            Throw.IfNull(source, nameof(source));
+            Throw.IfNull(action, nameof(action));
 
             foreach (var item in source)
             {
@@ -52,8 +52,8 @@ namespace Mjollnir.Collections.Generic.Extensions
 
         public static void ForEach<T>(this IEnumerable<T> source, Action<T, int> action)
         {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(action, "action");
+            Throw.IfNull(source, nameof(source));
+            Throw.IfNull(action, nameof(action));
 
             source
                 .Select((v, i) => new { Value = v, Index = i })
@@ -66,7 +66,7 @@ namespace Mjollnir.Collections.Generic.Extensions
 
         public static ReadOnlyCollection<T> AsReadOnlyCollection<T>(this IList<T> source)
         {
-            Throw.IfNull(source, "source");
+            Throw.IfNull(source, nameof(source));
 
             return new ReadOnlyCollection<T>(source);
         }
@@ -77,7 +77,7 @@ namespace Mjollnir.Collections.Generic.Extensions
 
         public static ReadOnlyCollection<T> ToReadOnlyCollection<T>(this IEnumerable<T> source)
         {
-            Throw.IfNull(source, "source");
+            Throw.IfNull(source, nameof(source));
 
             return source.ToArray().AsReadOnlyCollection();
         }
@@ -88,7 +88,7 @@ namespace Mjollnir.Collections.Generic.Extensions
 
         public static ReadOnlyDictionary<TKey, TValue> AsReadOnlyDictionary<TKey, TValue>(this IDictionary<TKey, TValue> source)
         {
-            Throw.IfNull(source, "source");
+            Throw.IfNull(source, nameof(source));
 
             return new ReadOnlyDictionary<TKey, TValue>(source);
         }
@@ -99,36 +99,36 @@ namespace Mjollnir.Collections.Generic.Extensions
 
         public static ReadOnlyDictionary<TKey, T> ToReadOnlyDictionary<TKey, T>(this IEnumerable<T> source, Func<T, TKey> keySelector)
         {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(keySelector, "keySelector");
+            Throw.IfNull(source, nameof(source));
+            Throw.IfNull(keySelector, nameof(keySelector));
 
             return source.ToDictionary(keySelector).AsReadOnlyDictionary();
         }
 
         public static ReadOnlyDictionary<TKey, T> ToReadOnlyDictionary<TKey, T>(this IEnumerable<T> source, Func<T, TKey> keySelector, IEqualityComparer<TKey> keyCcomparer)
         {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(keySelector, "keySelector");
-            Throw.IfNull(keyCcomparer, "keyComparer");
+            Throw.IfNull(source, nameof(source));
+            Throw.IfNull(keySelector, nameof(keySelector));
+            Throw.IfNull(keyCcomparer, nameof(keyCcomparer));
 
             return source.ToDictionary(keySelector, keyCcomparer).AsReadOnlyDictionary();
         }
 
         public static ReadOnlyDictionary<TKey, TElement> ToReadOnlyDictionary<T, TKey, TElement>(this IEnumerable<T> source, Func<T, TKey> keySelector, Func<T, TElement> elementSelector)
         {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(keySelector, "keySelector");
-            Throw.IfNull(elementSelector, "elementSelector");
+            Throw.IfNull(source, nameof(source));
+            Throw.IfNull(keySelector, nameof(keySelector));
+            Throw.IfNull(elementSelector, nameof(elementSelector));
 
             return source.ToDictionary(keySelector, elementSelector).AsReadOnlyDictionary();
         }
 
         public static ReadOnlyDictionary<TKey, TElement> ToReadOnlyDictionary<T, TKey, TElement>(this IEnumerable<T> source, Func<T, TKey> keySelector, Func<T, TElement> elementSelector, IEqualityComparer<TKey> keyComparer)
         {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(keySelector, "keySelector");
-            Throw.IfNull(elementSelector, "elementSelector");
-            Throw.IfNull(keyComparer, "keyComparer");
+            Throw.IfNull(source, nameof(source));
+            Throw.IfNull(keySelector, nameof(keySelector));
+            Throw.IfNull(elementSelector, nameof(elementSelector));
+            Throw.IfNull(keyComparer, nameof(keyComparer));
 
             return source.ToDictionary(keySelector, elementSelector, keyComparer).AsReadOnlyDictionary();
         }

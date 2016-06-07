@@ -36,7 +36,7 @@ namespace Mjollnir.Extensions
     {
         public static TService GetService<TService>(this IServiceProvider provider)
         {
-            Throw.IfNull(provider, "provider");
+            Throw.IfNull(provider, nameof(provider));
 
             return (TService)provider.GetService(typeof(TService));
         }

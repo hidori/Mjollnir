@@ -40,30 +40,30 @@ namespace Mjollnir.Xml.Extensions
     {
         public static IEnumerable<XmlAttribute> Attributes(this XmlElement source)
         {
-            Throw.IfNull(source, "source");
+            Throw.IfNull(source, nameof(source));
 
             return source.Attributes.OfType<XmlAttribute>();
         }
 
         public static IEnumerable<XmlAttribute> Attributes(this XmlElement source, Func<XmlAttribute, bool> predicate)
         {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(predicate, "predicate");
+            Throw.IfNull(source, nameof(source));
+            Throw.IfNull(predicate, nameof(predicate));
 
             return source.Attributes().Where(predicate);
         }
 
         public static IEnumerable<XmlElement> Elements(this XmlElement source)
         {
-            Throw.IfNull(source, "source");
+            Throw.IfNull(source, nameof(source));
 
             return source.ChildNodes.OfType<XmlElement>();
         }
 
         public static IEnumerable<XmlElement> Elements(this XmlElement source, Func<XmlElement, bool> predicate)
         {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(predicate, "predicate");
+            Throw.IfNull(source, nameof(source));
+            Throw.IfNull(predicate, nameof(predicate));
 
             return source.Elements().Where(predicate);
         }

@@ -1,5 +1,5 @@
 ﻿#region LICENSE
-// Copyright (c) 2008-2015, Hiroaki SHIBUKI
+// Copyright (c) 2008-2016, Hiroaki SHIBUKI
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -30,25 +30,25 @@
 
 namespace Mjollnir.Xml.Extensions
 {
+    using Mjollnir;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Xml;
-    using Mjollnir;
 
     public static class XmlNodeExtensions
     {
         public static IEnumerable<XmlNode> Nodes(this XmlNode source)
         {
-            Throw.IfNull(source, "source");
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
 
             return source.ChildNodes.OfType<XmlNode>();
         }
 
         public static IEnumerable<XmlNode> Nodes(this XmlNode source, Func<XmlNode, bool> predicate)
         {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(predicate, "predicate");
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(predicate, nameof(predicate));
 
             return source.Nodes().Where(predicate);
         }

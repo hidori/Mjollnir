@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Xml;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace Mjollnir.Xml.Extensions.Tests
 {
@@ -80,6 +81,35 @@ namespace Mjollnir.Xml.Extensions.Tests
                 attributes[0].Name.Is("moge");
                 attributes[0].InnerText.Is("456");
             }
+        }
+
+        [TestMethod]
+        public void WalkTest()
+        {
+            var xml = new XmlDocument();
+
+            xml.LoadXml(@"<doc><hoge>123<hogehoge>789</hogehoge>123</hoge><moge>456<mogemoge>ABC</mogemoge>456</moge></doc>");
+
+            var elements = new List<XmlElement>();
+
+            xml.DocumentElement.Walk(e => elements.Add(e));
+
+            elements.Count.Is(5);
+
+            elements[0].Name.Is("doc");
+            elements[0].InnerText.Is("123789123456ABC456");
+
+            elements[1].Name.Is("hoge");
+            elements[1].InnerText.Is("123789123");
+
+            elements[2].Name.Is("hogehoge");
+            elements[2].InnerText.Is("789");
+
+            elements[3].Name.Is("moge");
+            elements[3].InnerText.Is("456ABC456");
+
+            elements[4].Name.Is("mogemoge");
+            elements[4].InnerText.Is("ABC");
         }
     }
 }

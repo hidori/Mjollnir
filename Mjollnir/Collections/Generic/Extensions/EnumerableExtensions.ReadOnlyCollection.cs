@@ -28,17 +28,26 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
-namespace Mjollnir.Extensions
+namespace Mjollnir.Collections.Generic.Extensions
 {
-    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
 
-    public static class ServiceProviderExtensions
+    partial class EnumerableExtensions
     {
-        public static TService GetService<TService>(this IServiceProvider provider)
+        public static ReadOnlyCollection<T> AsReadOnlyCollection<T>(this IList<T> source)
         {
-            Throw.ArgumentNullException.IfNull(provider, nameof(provider));
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
 
-            return (TService)provider.GetService(typeof(TService));
+            return new ReadOnlyCollection<T>(source);
+        }
+
+        public static ReadOnlyCollection<T> ToReadOnlyCollection<T>(this IEnumerable<T> source)
+        {
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
+
+            return source.ToArray().AsReadOnlyCollection();
         }
     }
 }

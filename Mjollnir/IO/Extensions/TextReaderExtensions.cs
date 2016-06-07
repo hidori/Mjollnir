@@ -1,5 +1,5 @@
 ﻿#region LICENSE
-// Copyright (c) 2008-2015, Hiroaki SHIBUKI
+// Copyright (c) 2008-2016, Hiroaki SHIBUKI
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -37,7 +37,7 @@ namespace Mjollnir.IO.Extensions
     {
         public static IEnumerable<string> ReadLines(this TextReader reader)
         {
-            Throw.IfNull(reader, "reader");
+            Throw.ArgumentNullException.IfNull(reader, nameof(reader));
 
             for (var line = reader.ReadLine(); line != null; line = reader.ReadLine())
             {

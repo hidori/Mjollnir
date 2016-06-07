@@ -1,5 +1,5 @@
 ﻿#region LICENSE
-// Copyright (c) 2008-2015, Hiroaki SHIBUKI
+// Copyright (c) 2008-2016, Hiroaki SHIBUKI
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -32,17 +32,14 @@ namespace Mjollnir.Collections.Generic.Extensions
 {
     using System;
     using System.Collections.Generic;
-    using System.Collections.ObjectModel;
     using System.Linq;
 
     public static partial class EnumerableExtensions
     {
-        #region ForEach
-
         public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
         {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(action, "action");
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(action, nameof(action));
 
             foreach (var item in source)
             {
@@ -52,87 +49,12 @@ namespace Mjollnir.Collections.Generic.Extensions
 
         public static void ForEach<T>(this IEnumerable<T> source, Action<T, int> action)
         {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(action, "action");
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(action, nameof(action));
 
             source
                 .Select((v, i) => new { Value = v, Index = i })
                 .ForEach(_ => action(_.Value, _.Index));
         }
-
-        #endregion
-
-        #region AsReadOnlyCollection
-
-        public static ReadOnlyCollection<T> AsReadOnlyCollection<T>(this IList<T> source)
-        {
-            Throw.IfNull(source, "source");
-
-            return new ReadOnlyCollection<T>(source);
-        }
-
-        #endregion
-
-        #region ToReadOnlyCollection
-
-        public static ReadOnlyCollection<T> ToReadOnlyCollection<T>(this IEnumerable<T> source)
-        {
-            Throw.IfNull(source, "source");
-
-            return source.ToArray().AsReadOnlyCollection();
-        }
-
-        #endregion
-
-        #region AsReadOnlyDictionary
-
-        public static ReadOnlyDictionary<TKey, TValue> AsReadOnlyDictionary<TKey, TValue>(this IDictionary<TKey, TValue> source)
-        {
-            Throw.IfNull(source, "source");
-
-            return new ReadOnlyDictionary<TKey, TValue>(source);
-        }
-
-        #endregion
-
-        #region ToReadOnlyDictionary
-
-        public static ReadOnlyDictionary<TKey, T> ToReadOnlyDictionary<TKey, T>(this IEnumerable<T> source, Func<T, TKey> keySelector)
-        {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(keySelector, "keySelector");
-
-            return source.ToDictionary(keySelector).AsReadOnlyDictionary();
-        }
-
-        public static ReadOnlyDictionary<TKey, T> ToReadOnlyDictionary<TKey, T>(this IEnumerable<T> source, Func<T, TKey> keySelector, IEqualityComparer<TKey> keyCcomparer)
-        {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(keySelector, "keySelector");
-            Throw.IfNull(keyCcomparer, "keyComparer");
-
-            return source.ToDictionary(keySelector, keyCcomparer).AsReadOnlyDictionary();
-        }
-
-        public static ReadOnlyDictionary<TKey, TElement> ToReadOnlyDictionary<T, TKey, TElement>(this IEnumerable<T> source, Func<T, TKey> keySelector, Func<T, TElement> elementSelector)
-        {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(keySelector, "keySelector");
-            Throw.IfNull(elementSelector, "elementSelector");
-
-            return source.ToDictionary(keySelector, elementSelector).AsReadOnlyDictionary();
-        }
-
-        public static ReadOnlyDictionary<TKey, TElement> ToReadOnlyDictionary<T, TKey, TElement>(this IEnumerable<T> source, Func<T, TKey> keySelector, Func<T, TElement> elementSelector, IEqualityComparer<TKey> keyComparer)
-        {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(keySelector, "keySelector");
-            Throw.IfNull(elementSelector, "elementSelector");
-            Throw.IfNull(keyComparer, "keyComparer");
-
-            return source.ToDictionary(keySelector, elementSelector, keyComparer).AsReadOnlyDictionary();
-        }
-
-        #endregion
     }
 }

@@ -1,5 +1,5 @@
 ﻿#region LICENSE
-// Copyright (c) 2008-2015, Hiroaki SHIBUKI
+// Copyright (c) 2008-2016, Hiroaki SHIBUKI
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -30,42 +30,55 @@
 
 namespace Mjollnir.Xml.Extensions
 {
+    using Mjollnir;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Xml;
-    using Mjollnir;
 
     public static class XmlElementExtensions
     {
         public static IEnumerable<XmlAttribute> Attributes(this XmlElement source)
         {
-            Throw.IfNull(source, "source");
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
 
             return source.Attributes.OfType<XmlAttribute>();
         }
 
         public static IEnumerable<XmlAttribute> Attributes(this XmlElement source, Func<XmlAttribute, bool> predicate)
         {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(predicate, "predicate");
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(predicate, nameof(predicate));
 
             return source.Attributes().Where(predicate);
         }
 
         public static IEnumerable<XmlElement> Elements(this XmlElement source)
         {
-            Throw.IfNull(source, "source");
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
 
             return source.ChildNodes.OfType<XmlElement>();
         }
 
         public static IEnumerable<XmlElement> Elements(this XmlElement source, Func<XmlElement, bool> predicate)
         {
-            Throw.IfNull(source, "source");
-            Throw.IfNull(predicate, "predicate");
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
+            Throw.ArgumentNullException.IfNull(predicate, nameof(predicate));
 
             return source.Elements().Where(predicate);
+        }
+
+        public static void Walk(this XmlElement element, Action<XmlElement> action)
+        {
+            Throw.ArgumentNullException.IfNull(element, nameof(element));
+            Throw.ArgumentNullException.IfNull(action, nameof(action));
+
+            action(element);
+
+            foreach (var childElement in element.Elements())
+            {
+                childElement.Walk(action);
+            }
         }
     }
 }

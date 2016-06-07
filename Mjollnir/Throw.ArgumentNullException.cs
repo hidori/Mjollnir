@@ -28,17 +28,42 @@
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #endregion
 
-namespace Mjollnir.Extensions
+namespace Mjollnir
 {
     using System;
 
-    public static class ServiceProviderExtensions
+    partial class Throw
     {
-        public static TService GetService<TService>(this IServiceProvider provider)
+        public static class ArgumentNullException
         {
-            Throw.ArgumentNullException.IfNull(provider, nameof(provider));
+            public static void IfNull<TParam>(TParam param)
+            {
+                // param can be null
 
-            return (TService)provider.GetService(typeof(TService));
+                Throw<System.ArgumentNullException>.If(param == null);
+            }
+
+            public static void IfNull<TParam>(TParam param, string paramName)
+            {
+                // param can be null
+                Throw<System.ArgumentNullException>.If(paramName == null, () => new System.ArgumentNullException(nameof(paramName)));
+
+                Throw<System.ArgumentNullException>.If(param == null, () => new System.ArgumentNullException(paramName));
+            }
+
+            public static void IfNull<TParam>(TParam param, string userMessage, Exception innerException)
+            {
+                Throw<System.ArgumentNullException>.If(param == null, userMessage, innerException);
+            }
+
+            public static void IfNull<TParam>(TParam param, string paramName, string userMessage)
+            {
+                // condition is not null
+                Throw<System.ArgumentNullException>.If(paramName == null, () => new System.ArgumentNullException(nameof(paramName)));
+                Throw<System.ArgumentNullException>.If(userMessage == null, () => new System.ArgumentNullException(nameof(userMessage)));
+
+                Throw<System.ArgumentNullException>.If(param == null, () => new System.ArgumentNullException(paramName, userMessage));
+            }
         }
     }
 }

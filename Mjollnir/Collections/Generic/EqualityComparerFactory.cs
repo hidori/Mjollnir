@@ -1,5 +1,5 @@
 ﻿#region LICENSE
-// Copyright (c) 2008-2015, Hiroaki SHIBUKI
+// Copyright (c) 2008-2016, Hiroaki SHIBUKI
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -39,8 +39,8 @@ namespace Mjollnir.Collections.Generic
         {
             public EqualityComparer(Func<T, T, bool> equals, Func<T, int> getHashCode)
             {
-                Throw.IfNull(equals, "equals");
-                Throw.IfNull(getHashCode, "getHashCode");
+                Throw.ArgumentNullException.IfNull(equals, nameof(equals));
+                Throw.ArgumentNullException.IfNull(getHashCode, nameof(getHashCode));
 
                 this.equals = equals;
                 this.getHashCode = getHashCode;

@@ -3,7 +3,7 @@ set ECHO=
 
 set TARGET=Mjollnir
 set TARGET_DIR=%~dp0
-set TARGET_VERSION=5.0.9
+set TARGET_VERSION=5.1.1
 
 set MSBUILD=%SystemRoot%\Microsoft.NET\Framework64\v4.0.30319\MSBuild.exe
 set NUGET=%TARGET_DIR%.nuget\NuGet.exe

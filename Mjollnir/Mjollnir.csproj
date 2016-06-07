@@ -44,6 +44,8 @@
     <Compile Include="Collections\Generic\ComparerFactory.cs" />
     <Compile Include="Collections\Generic\EqualityComparerFactory.cs" />
     <Compile Include="Collections\Generic\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Collections\Generic\Extensions\EnumerableExtensions.ReadOnlyCollection.cs" />
+    <Compile Include="Collections\Generic\Extensions\EnumerableExtensions.ReadOnlyDictionary.cs" />
     <Compile Include="Extensions\ComparableExtensions.cs" />
     <Compile Include="Extensions\ServiceProviderExtensions.cs" />
     <Compile Include="Extensions\ByteArrayExtensions.cs" />

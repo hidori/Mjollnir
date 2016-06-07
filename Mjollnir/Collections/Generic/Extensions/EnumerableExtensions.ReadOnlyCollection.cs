@@ -30,31 +30,24 @@
 
 namespace Mjollnir.Collections.Generic.Extensions
 {
-    using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Linq;
 
-    public static partial class EnumerableExtensions
+    partial class EnumerableExtensions
     {
-        public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
+        public static ReadOnlyCollection<T> AsReadOnlyCollection<T>(this IList<T> source)
         {
             Throw.IfNull(source, nameof(source));
-            Throw.IfNull(action, nameof(action));
 
-            foreach (var item in source)
-            {
-                action(item);
-            }
+            return new ReadOnlyCollection<T>(source);
         }
 
-        public static void ForEach<T>(this IEnumerable<T> source, Action<T, int> action)
+        public static ReadOnlyCollection<T> ToReadOnlyCollection<T>(this IEnumerable<T> source)
         {
             Throw.IfNull(source, nameof(source));
-            Throw.IfNull(action, nameof(action));
 
-            source
-                .Select((v, i) => new { Value = v, Index = i })
-                .ForEach(_ => action(_.Value, _.Index));
+            return source.ToArray().AsReadOnlyCollection();
         }
     }
 }

@@ -30,11 +30,11 @@
 
 namespace Mjollnir.Xml.Extensions
 {
+    using Mjollnir;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Xml;
-    using Mjollnir;
 
     public static class XmlElementExtensions
     {

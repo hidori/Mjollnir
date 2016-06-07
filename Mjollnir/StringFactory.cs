@@ -1,6 +1,6 @@
 ﻿using System;
 #region LICENSE
-// Copyright (c) 2008-2015, Hiroaki SHIBUKI
+// Copyright (c) 2008-2016, Hiroaki SHIBUKI
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without

@@ -32,38 +32,38 @@ namespace Mjollnir
 {
     using System;
 
-    public static partial class Throw
+    partial class Throw
     {
-        // nothing to do.
-    }
-
-    public static class Throw<TException> where TException : Exception
-    {
-        public static void If(bool condition)
+        public static class ArgumentNullException
         {
-            if (condition) throw (TException)System.Activator.CreateInstance(typeof(TException));
-        }
+            public static void IfNull<TParam>(TParam param)
+            {
+                // param can be null
 
-        public static void If(bool condition, string userMessage)
-        {
-            if (userMessage == null) throw new ArgumentNullException(nameof(userMessage));
+                Throw<System.ArgumentNullException>.If(param == null);
+            }
 
-            if (condition) throw (TException)System.Activator.CreateInstance(typeof(TException), new object[] { userMessage });
-        }
+            public static void IfNull<TParam>(TParam param, string paramName)
+            {
+                // param can be null
+                Throw<System.ArgumentNullException>.If(paramName == null, () => new System.ArgumentNullException(nameof(paramName)));
 
-        public static void If(bool condition, string userMessage, Exception innerException)
-        {
-            if (userMessage == null) throw new ArgumentNullException(nameof(userMessage));
-            if (innerException == null) throw new ArgumentNullException(nameof(innerException));
+                Throw<System.ArgumentNullException>.If(param == null, () => new System.ArgumentNullException(paramName));
+            }
 
-            if (condition) throw (TException)System.Activator.CreateInstance(typeof(TException), new object[] { userMessage, innerException });
-        }
+            public static void IfNull<TParam>(TParam param, string userMessage, Exception innerException)
+            {
+                Throw<System.ArgumentNullException>.If(param == null, userMessage, innerException);
+            }
 
-        public static void If(bool condition, Func<TException> factory)
-        {
-            if (factory == null) throw new ArgumentNullException(nameof(factory));
+            public static void IfNull<TParam>(TParam param, string paramName, string userMessage)
+            {
+                // condition is not null
+                Throw<System.ArgumentNullException>.If(paramName == null, () => new System.ArgumentNullException(nameof(paramName)));
+                Throw<System.ArgumentNullException>.If(userMessage == null, () => new System.ArgumentNullException(nameof(userMessage)));
 
-            if (condition) throw factory();
+                Throw<System.ArgumentNullException>.If(param == null, () => new System.ArgumentNullException(paramName, userMessage));
+            }
         }
     }
 }

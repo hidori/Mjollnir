@@ -52,6 +52,9 @@
     <Compile Include="IO\Extensions\TextReaderExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringFactory.cs" />
+    <Compile Include="Throw.ArgumentOutOfRangeException.cs" />
+    <Compile Include="Throw.ArgumentNullException.cs" />
+    <Compile Include="Throw.Obsolates.cs" />
     <Compile Include="Throw.cs" />
     <Compile Include="Xml\Extensions\XmlElementExtensions.cs" />
     <Compile Include="Xml\Extensions\XmlNodeExtensions.cs" />

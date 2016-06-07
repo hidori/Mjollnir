@@ -44,15 +44,21 @@
     <Compile Include="Collections\Generic\ComparerFactory.cs" />
     <Compile Include="Collections\Generic\EqualityComparerFactory.cs" />
     <Compile Include="Collections\Generic\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Collections\Generic\Extensions\EnumerableExtensions.ReadOnlyCollection.cs" />
+    <Compile Include="Collections\Generic\Extensions\EnumerableExtensions.ReadOnlyDictionary.cs" />
     <Compile Include="Extensions\ComparableExtensions.cs" />
     <Compile Include="Extensions\ServiceProviderExtensions.cs" />
     <Compile Include="Extensions\ByteArrayExtensions.cs" />
     <Compile Include="IO\Extensions\TextReaderExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringFactory.cs" />
+    <Compile Include="Throw.ArgumentOutOfRangeException.cs" />
+    <Compile Include="Throw.ArgumentNullException.cs" />
+    <Compile Include="Throw.Obsolates.cs" />
     <Compile Include="Throw.cs" />
     <Compile Include="Xml\Extensions\XmlElementExtensions.cs" />
     <Compile Include="Xml\Extensions\XmlNodeExtensions.cs" />
+    <Compile Include="Xml\Linq\Extensions\XElementExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Mjollnir.nuspec" />

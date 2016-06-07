@@ -1,5 +1,5 @@
 ﻿#region LICENSE
-// Copyright (c) 2008-2015, Hiroaki SHIBUKI
+// Copyright (c) 2008-2016, Hiroaki SHIBUKI
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -39,7 +39,7 @@ namespace Mjollnir
 
         public static T CreateInstance<T>(params object[] args)
         {
-            Throw.IfNull(args, "args");
+            Throw.ArgumentNullException.IfNull(args, nameof(args));
 
             return (T)System.Activator.CreateInstance(typeof(T), args);
         }

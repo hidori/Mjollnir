@@ -1,5 +1,5 @@
 ﻿#region LICENSE
-// Copyright (c) 2008-2015, Hiroaki SHIBUKI
+// Copyright (c) 2008-2016, Hiroaki SHIBUKI
 // All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
@@ -38,31 +38,31 @@ namespace Mjollnir.Extensions
     {
         public static Stream AsStream(this byte[] source, int index, int count)
         {
-            Throw.IfNull(source, "source");
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
 
-            Throw.IfOutOfRange(index < 0, "index");
-            Throw.IfOutOfRange(count < 0, "count");
+            Throw.ArgumentOutOfRangeException.If(index < 0, nameof(index));
+            Throw.ArgumentOutOfRangeException.If(count < 0, nameof(count));
 
             return new MemoryStream(source, index, count);
         }
 
         public static Stream AsStream(this byte[] source)
         {
-            Throw.IfNull(source, "source");
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
 
             return source.AsStream(0, source.Count());
         }
 
         public static Stream ToStream(this IEnumerable<byte> source, int index, int count)
         {
-            Throw.IfNull(source, "source");
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
 
             return source.Skip(index).Take(count).ToArray().AsStream();
         }
 
         public static Stream ToStream(this IEnumerable<byte> source)
         {
-            Throw.IfNull(source, "source");
+            Throw.ArgumentNullException.IfNull(source, nameof(source));
 
             return source.ToArray().AsStream();
         }

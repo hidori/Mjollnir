@@ -58,7 +58,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ActivaterTests.cs" />
     <Compile Include="ByteArrayFactoryTest.cs" />
     <Compile Include="Collections\Generic\ComparerFactoryTest.cs" />
     <Compile Include="Collections\Generic\EqualityComparerFactoryTest.cs" />
@@ -71,7 +70,6 @@
     <Compile Include="StringFactoryTest.cs" />
     <Compile Include="ThrowArgumentOutOfRangeExceptionTest.cs" />
     <Compile Include="ThrowArgumentNullExceptionTest.cs" />
-    <Compile Include="ThrowTest.Obsolates.cs" />
     <Compile Include="ThrowTest.cs" />
     <Compile Include="Xml\Extensions\XmlElementExtensionsTest.cs" />
     <Compile Include="Xml\Extensions\XmlNodeExtensionsTest.cs" />

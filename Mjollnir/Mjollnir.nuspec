@@ -9,7 +9,7 @@
     <projectUrl>https://github.com/hidori/Mjollnir</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A collection of reusable code and components.</description>
-    <copyright>Copyright (c) 2008-2016 Hiroaki SHIBUKI a.k.a. hidori</copyright>
+    <copyright>Copyright (c) 2008-2017 Hiroaki SHIBUKI a.k.a. hidori</copyright>
     <tags>BCL Mjollnir</tags>
   </metadata>
   <files>

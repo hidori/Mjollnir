@@ -16,15 +16,10 @@ A collection of reusable code and components.
 
 ##<a name="Mjollnir_Namespace">Mjollnir Namespace</a>
 
-* [Activator Class](#Mjollnir.Activator_Class)
 * [ByteArrayFactory Class](#ByteArrayFactory_Class)
 * [StringFactory Class](#Mjollnir.Text.StringFactory_Class)
 * [Throw Class](#Mjollnir.Throw_Class)
 * [Throw&lt;T&gt; Class](#Mjollnir.ThrowOfT_Class)
-
-###<a name="Mjollnir.Activator_Class">Activator Class</a>
-
-* CreateInstance&lt;T&gt; Method
 
 ###<a name="Mjollnir.ByteArrayFactory_Class">ByteArrayFactory Class</a>
 
@@ -36,11 +31,8 @@ A collection of reusable code and components.
 
 ###<a name="Mjollnir.Throw_Class">Throw Class</a>
 
-* If Method
-* IfInvalidOperation Method
-* IfNotSupported Method
-* IfNull&lt;TParam&gt; Method
-* IfOutOfRange Method
+* [Throw.ArgumentNullException Class](#Mjollnir.Throw.ArgumentNullException_Class)
+* [Throw.ArgumentOutOfRangeException Class](#Mjollnir.Throw.ArgumentOutOfRangeException_Class)
 
 ###<a name="Mjollnir.ThrowOfT_Class">Throw&lt;T&gt; Class</a>
 

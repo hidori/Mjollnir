@@ -16,15 +16,10 @@ A collection of reusable code and components.
 
 ##<a name="Mjollnir_Namespace">Mjollnir Namespace</a>
 
-* [Activator Class](#Mjollnir.Activator_Class)
 * [ByteArrayFactory Class](#ByteArrayFactory_Class)
 * [StringFactory Class](#Mjollnir.Text.StringFactory_Class)
 * [Throw Class](#Mjollnir.Throw_Class)
 * [Throw&lt;T&gt; Class](#Mjollnir.ThrowOfT_Class)
-
-###<a name="Mjollnir.Activator_Class">Activator Class</a>
-
-* CreateInstance&lt;T&gt; Method
 
 ###<a name="Mjollnir.ByteArrayFactory_Class">ByteArrayFactory Class</a>
 

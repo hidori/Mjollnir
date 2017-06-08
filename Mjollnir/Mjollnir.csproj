@@ -39,7 +39,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activator.cs" />
     <Compile Include="ByteArrayFactory.cs" />
     <Compile Include="Collections\Generic\ComparerFactory.cs" />
     <Compile Include="Collections\Generic\EqualityComparerFactory.cs" />

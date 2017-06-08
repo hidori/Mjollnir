@@ -58,7 +58,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ActivaterTests.cs" />
     <Compile Include="ByteArrayFactoryTest.cs" />
     <Compile Include="Collections\Generic\ComparerFactoryTest.cs" />
     <Compile Include="Collections\Generic\EqualityComparerFactoryTest.cs" />

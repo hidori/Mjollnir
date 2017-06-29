@@ -1,20 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 14.00
-# Visual Studio 2015
-VisualStudioVersion = 14.0.22823.1
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4358B9CD-2615-4A74-86F1-0CED8837E90E}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{97D6912A-68F0-48F1-A29F-CB4CDD2DC273}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
-		NuPack.bat = NuPack.bat
-		NuPush.bat = NuPush.bat
 		README.md = README.md
 	EndProjectSection
 EndProject
